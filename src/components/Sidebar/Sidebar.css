@@ -1,0 +1,115 @@
+.search-field {
+  font-family: inherit;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  width: 80%;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.search img {
+  margin: 1rem;
+  cursor: pointer;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 30%;
+  padding: 2rem;
+}
+.details .heading {
+  font-size: x-large;
+  font-weight: bold;
+}
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: larger;
+}
+.divider {
+  border: 2px solid white;
+  border-radius: 25px;
+}
+.sidebar {
+  background: rgba(36, 0, 0, 0.35);
+  backdrop-filter: blur(19.5px);
+  -webkit-backdrop-filter: blur(19.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40%;
+  height: 100%;
+  padding: 1rem;
+}
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.error-text {
+  color: red;
+}
+.main-data-responsive {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .details .heading {
+    font-size: large;
+  }
+  .detail-item {
+    font-size: medium;
+  }
+  .sidebar {
+    width: 50%;
+  }
+  .search-field {
+    font-size: 1rem;
+  }
+  .search img {
+    width: 40px;
+  }
+  .error-text {
+    font-size: small;
+  }
+}
+@media screen and (max-width: 850px) {
+  .sidebar {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .sidebar {
+    width: 100%;
+  }
+  .main-data-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .main-data-responsive .divider {
+    width: 100%;
+  }
+  .temp {
+    font-size: xx-large;
+    margin-top: 2rem !important;
+    margin-right: 0 !important;
+  }
+  .name {
+    margin-right: 0 !important;
+  }
+}

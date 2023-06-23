@@ -1,0 +1,69 @@
+.right-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 5rem;
+  width: 100%;
+  padding-bottom: 18rem;
+}
+.temp {
+  font-size: 90px;
+  font-weight: bolder;
+  margin-right: 1rem;
+  margin-bottom: -1rem;
+}
+.name {
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.subtext {
+  font-size: large;
+}
+.city-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.weather-condition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+.weather-condition img {
+  width: 60px;
+}
+
+@media screen and (max-width: 850px) {
+  .right-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .temp {
+    font-size: xx-large;
+    margin-top: 10rem;
+  }
+  .name {
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  .subtext {
+    font-size: medium;
+  }
+  .weather-condition {
+    margin-top: 1.5rem;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+  .weather-condition img {
+    width: 45px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .right-section {
+    display: none;
+  }
+}

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Sidebar from "./components/Sidebar/Sidebar";
+import RightSection from "./components/RightSection/RightSection";
 
 function App() {
+  const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState(false);
+  const [errorText, setErrorText] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar
+        data={weatherData}
+        dataHandler={setWeatherData}
+        error={error}
+        errorHandler={setError}
+        errorTextHandler={setErrorText}
+        errorText={errorText}
+      />
+      {weatherData && <RightSection data={weatherData} error={error} />}
     </div>
   );
 }
