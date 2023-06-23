@@ -66,6 +66,9 @@
 .main-data-responsive {
   display: none;
 }
+.empty-item{
+  margin: auto;
+}
 @media screen and (max-width: 900px) {
   .details .heading {
     font-size: large;

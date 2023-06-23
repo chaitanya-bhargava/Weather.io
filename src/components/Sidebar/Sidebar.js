@@ -73,7 +73,7 @@ const Sidebar = ({
           <input
             type="text"
             name="city"
-            placeholder="Search City"
+            placeholder="Search City/State"
             ref={cityInputRef}
             className="search-field"
           />
@@ -128,7 +128,7 @@ const Sidebar = ({
         <div className="details">
           <p className="heading">Weather Details</p>
           <div className="detail-item">
-            <p>Nothing to display...</p>
+            <p className="empty-item">Nothing to display...</p>
           </div>
         </div>
       </div>
