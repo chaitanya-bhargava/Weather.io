@@ -13,6 +13,8 @@ const Sidebar = ({
   useEffect(() => {
     async function fetchData() {
       if (cityName === "") {
+        errorTextHandler("Please enter a valid city name!");
+        errorHandler(true);
         return;
       }
       const weatherResponse = await fetch(
@@ -58,12 +60,6 @@ const Sidebar = ({
   }, [cityName, dataHandler, errorHandler, errorTextHandler]);
   const searchHandler = () => {
     const enteredCity = cityInputRef.current.value;
-    if (enteredCity === "") {
-      errorTextHandler("Please enter a valid city name!");
-      errorHandler(true);
-      setCityName("");
-      return;
-    }
     setCityName(enteredCity.toLowerCase());
     cityInputRef.current.value = "";
   };
