@@ -60,6 +60,7 @@
   }
   .weather-condition img {
     width: 45px;
+    margin-left: -0.3rem;
   }
 }
 @media screen and (max-width: 500px) {
