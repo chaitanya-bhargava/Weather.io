@@ -16,7 +16,7 @@ const Sidebar = ({
         return;
       }
       const weatherResponse = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b3257e61c452dcc761c19d2378555860`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b3257e61c452dcc761c19d2378555860`
       );
       const data = await weatherResponse.json();
       const populationResponse = await fetch(
