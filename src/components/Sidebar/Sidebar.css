@@ -30,7 +30,8 @@
 }
 .details .heading {
   font-size: x-large;
-  font-weight: bold;
+  font-weight: bolder;
+  text-align: center;
 }
 .detail-item {
   display: flex;
