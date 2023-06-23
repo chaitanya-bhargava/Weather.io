@@ -9,7 +9,8 @@ const Sidebar = ({
   errorText,
 }) => {
   const cityInputRef = useRef();
-  const [cityName, setCityName] = useState("New Delhi");
+  const [cityName, setCityName] = useState("new delhi");
+  const [population, setPopulation] = useState((1380004385).toLocaleString("en-US"));
   useEffect(() => {
     async function fetchData() {
       if (cityName === "") {
@@ -17,6 +18,7 @@ const Sidebar = ({
         errorHandler(true);
         return;
       }
+      console.log("uiwfnauf");
       const weatherResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b3257e61c452dcc761c19d2378555860`
       );
@@ -25,13 +27,12 @@ const Sidebar = ({
         `https://restcountries.com/v3.1/capital/${cityName}?fields=capital,population`
       );
       const populationData = await populationResponse.json();
-      let population;
       if ("status" in populationData) {
-        population = null;
+        setPopulation(null);
       } else if (populationData[0].capital[0].toLowerCase() === `${cityName}`) {
-        population = populationData[0].population.toLocaleString("en-US");
+        setPopulation(populationData[0].population.toLocaleString("en-US"));
       } else {
-        population = (1380004385).toLocaleString("en-US");
+        setPopulation(null);
       }
       if (data.cod === 200) {
         const transformedData = {
@@ -57,10 +58,10 @@ const Sidebar = ({
       }
     }
     fetchData();
-  }, [cityName, dataHandler, errorHandler, errorTextHandler]);
+  }, [cityName,population, dataHandler, errorHandler, errorTextHandler]);
   const searchHandler = () => {
     const enteredCity = cityInputRef.current.value;
-    setCityName(enteredCity.toLowerCase());
+    setCityName(enteredCity.toLowerCase().trim());
     cityInputRef.current.value = "";
   };
   if (!data) {
