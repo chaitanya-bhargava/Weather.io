@@ -18,7 +18,6 @@ const Sidebar = ({
         errorHandler(true);
         return;
       }
-      console.log("uiwfnauf");
       const weatherResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b3257e61c452dcc761c19d2378555860`
       );
