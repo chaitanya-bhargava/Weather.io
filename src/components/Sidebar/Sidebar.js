@@ -33,12 +33,15 @@ const Sidebar = ({
       } else {
         setPopulation(null);
       }
+      console.log(data)
       if (data.cod === 200) {
         const transformedData = {
           id: data.id,
           name: data.name,
           temp: Math.floor(data.main.temp - 273.15),
+          feels_like: Math.floor(data.main.feels_like - 273.15),
           humidity: data.main.humidity,
+          pressure: data.main.pressure,
           windspeed: data.wind.speed,
           condition: data.weather[0].main,
           population: population,
@@ -82,8 +85,8 @@ const Sidebar = ({
         <div className="main-data-responsive">
           <div className="divider" />
           <p className="temp">
-            {data.temp}
-            {String.fromCharCode(176)}
+            {data.temp} 
+            {String.fromCharCode(176)}C
           </p>
           <div className="city-data">
             <p className="name">{data.name}</p>
@@ -100,10 +103,16 @@ const Sidebar = ({
         <div className="details">
           <p className="heading">Weather Details</p>
           <div className="detail-item">
+            <p>Feels Like:</p> <p>{data.feels_like} {String.fromCharCode(176)}C</p>
+          </div>
+          <div className="detail-item">
             <p>Humidity:</p> <p>{data.humidity} %</p>
           </div>
           <div className="detail-item">
             <p>Wind:</p> <p>{data.windspeed} m/s</p>
+          </div>
+          <div className="detail-item">
+            <p>Pressure:</p> <p>{data.pressure} hPa</p>
           </div>
         </div>
       </div>

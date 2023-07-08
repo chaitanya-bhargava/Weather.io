@@ -5,7 +5,7 @@ const RightSection = ({ data, error }) => {
       <div className="right-section">
         <p className="temp">
           {data.temp}
-          {String.fromCharCode(176)}
+          {String.fromCharCode(176)}C
         </p>
         <div className="city-data">
           <p className="name">{data.name}</p>
